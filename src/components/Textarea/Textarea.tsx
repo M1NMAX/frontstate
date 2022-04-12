@@ -24,7 +24,7 @@ const sizes: IScale = {
   xl: 'h-28'
 }
 
-export default function TextInput(props: ITextInput) {
+export default function Textarea(props: ITextarea) {
   const {
     rounded = 'sm',
     size = 'sm',
@@ -61,7 +61,7 @@ export default function TextInput(props: ITextInput) {
   )
 }
 
-interface ITextInput {
+interface ITextarea {
   rounded?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   required?: boolean
