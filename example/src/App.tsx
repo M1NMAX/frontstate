@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
-import { Button, Textarea, TextInput, Tooltip } from 'frontstate'
+import { Button, NumberInput, Textarea, TextInput, Tooltip } from 'frontstate'
 import 'frontstate/dist/index.css'
 
 const App = () => {
   const [value, setValue] = useState('nf')
+  const [num, setNum] = useState('10')
   console.log(value)
   return (
     <div className='flex flex-col items-center justify-center space-y-2 p-2 bg-blue-400'>
@@ -33,6 +34,14 @@ const App = () => {
         onChange={(e) => setValue(e.currentTarget.value)}
         rounded='xl'
         size='xl'
+      />
+      <NumberInput
+        label='heh'
+        min='12'
+        value={num}
+        onChange={(e) => setNum(e.currentTarget.value)}
+        rounded='md'
+
       />
     </div>
   )
