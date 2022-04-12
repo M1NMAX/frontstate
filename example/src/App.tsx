@@ -15,8 +15,8 @@ const App = () => {
       >
         hello
       </Button>
-      <Tooltip label='Tootiptext'  compact>
-        <button className='bg-red-500 w-12 h-12'>h</button>
+      <Tooltip label='Tootiptext' position='right'  compact>
+        <button className='bg-red-500 w-12 h-24'>h</button>
       </Tooltip>
     </div>
   )
