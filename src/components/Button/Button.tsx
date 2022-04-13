@@ -1,14 +1,7 @@
 import React from 'react'
 
-export interface ISizeLabel {
-  xs: string
-  sm: string
-  md: string
-  lg: string
-  xl: string
-}
 
-const sizes: ISizeLabel = {
+const sizes = {
   xs: 'h-6',
   sm: 'h-8',
   md: 'h-10',
