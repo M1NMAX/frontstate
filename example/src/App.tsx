@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import {
   Alert,
   Button,
+  Loader,
   NumberInput,
   Slider,
   Textarea,
@@ -26,6 +27,8 @@ const App = () => {
       >
         hgaogo
       </Alert>
+
+      <Loader />
       <Alert
         icon=' &times;'
         variant='light'
