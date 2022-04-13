@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import {
+  Alert,
   Button,
   NumberInput,
   Slider,
@@ -15,7 +16,25 @@ const App = () => {
   const [num, setNum] = useState('10')
   console.log(value)
   return (
-    <div className='flex flex-col items-center justify-center space-y-2 p-2 bg-green-400 w-screen h-screen '>
+    <div className='flex flex-col items-center justify-center space-y-2 p-2  w-screen h-screen overflow-hidden'>
+      <Alert
+        variant='light'
+        color='green'
+        title='heje'
+        rounded='xl'
+        withCloseBtn
+      >
+        hgaogo
+      </Alert>
+      <Alert
+        icon=' &times;'
+        variant='light'
+        color='pink'
+        title='heje'
+        rounded='xl'
+      >
+        hgaogo
+      </Alert>
       <Button
         variant='light'
         size='lg'
