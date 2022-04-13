@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 
-import { Button, NumberInput, Textarea, TextInput, Tooltip } from 'frontstate'
+import {
+  Button,
+  NumberInput,
+  Slider,
+  Textarea,
+  TextInput,
+  Tooltip
+} from 'frontstate'
 import 'frontstate/dist/index.css'
 
 const App = () => {
@@ -8,10 +15,26 @@ const App = () => {
   const [num, setNum] = useState('10')
   console.log(value)
   return (
-    <div className='flex flex-col items-center justify-center space-y-2 p-2 '>
-      <Button variant='light' size="lg" color='pink'  compact fullWidth onClick={() => console.log('ff')}>
+    <div className='flex flex-col items-center justify-center space-y-2 p-2 bg-green-400 w-screen h-screen '>
+      <Button
+        variant='light'
+        size='lg'
+        color='pink'
+        compact
+        fullWidth
+        onClick={() => console.log('ff')}
+      >
         hello
       </Button>
+
+      <Slider
+        label='Slider'
+        value={num}
+        onChange={(e) => setNum(e.currentTarget.value)}
+        rounded='lg'
+        color='pink'
+        size='xs'
+      />
       <Tooltip label='Tootiptext' position='right' compact>
         <button className='bg-red-500 w-12 h-8'>h</button>
       </Tooltip>
@@ -41,7 +64,6 @@ const App = () => {
         value={num}
         onChange={(e) => setNum(e.currentTarget.value)}
         rounded='md'
-
       />
     </div>
   )
