@@ -8,8 +8,8 @@ const App = () => {
   const [num, setNum] = useState('10')
   console.log(value)
   return (
-    <div className='flex flex-col items-center justify-center space-y-2 p-2 bg-blue-400'>
-      <Button variant='light' compact onClick={() => console.log('ff')}>
+    <div className='flex flex-col items-center justify-center space-y-2 p-2 '>
+      <Button variant='light' size="lg" color='pink'  compact fullWidth onClick={() => console.log('ff')}>
         hello
       </Button>
       <Tooltip label='Tootiptext' position='right' compact>

@@ -1,22 +1,52 @@
 import React from 'react'
 
-interface IVariants {
-  filled: string
-  outline: string
-  light: string
+export interface ISizeLabel {
+  xs: string
+  sm: string
+  md: string
+  lg: string
+  xl: string
 }
 
-const variants: IVariants = {
-  filled: 'bg-green-500 text-white hover:bg-green-600',
-  outline:
-    'bg-transparent text-green-500 border border-green-400 hover:bg-green-500/75',
-  light: 'bg-green-200 text-green-500'
+const sizes: ISizeLabel = {
+  xs: 'h-6',
+  sm: 'h-8',
+  md: 'h-10',
+  lg: 'h-12',
+  xl: 'h-14'
 }
+
+type ButtonVariants = 'filled' | 'outline' | 'light'
+
+function getVariantStyle({
+  variant,
+  color
+}: {
+  variant: ButtonVariants
+  color: string
+}) {
+  if (variant === 'filled')
+    return `bg-${color}-500 text-white hover:bg-${color}-600 `
+  if (variant === 'outline')
+    return `bg-transparent text-${color}-500 border border-${color}-400 hover:bg-${color}-500/75`
+  if (variant === 'light') {
+    return `bg-${color}-200 text-${color}-500`
+  }
+  return ''
+}
+
+const getWidthStyle = (fullWidth: boolean) =>
+  fullWidth ? 'w-full block' : 'w-auto inline-block'
+
+const getSizeStyle = (size: string) => sizes[size]
 
 export default function Button(props: IButton) {
   const {
     children,
     variant = 'filled',
+    color = 'green',
+    size = 'sm',
+    fullWidth = false,
     compact = false,
     uppercase = false,
     rounded = false,
@@ -26,9 +56,11 @@ export default function Button(props: IButton) {
     type = 'button'
   } = props
 
-  const classname = `${variants[variant]}
+  const classname = `${getVariantStyle({ variant, color })}
+  ${getSizeStyle(size)}
+  ${getWidthStyle(fullWidth)}
   ${uppercase && 'uppercase'}
-  ${compact? 'px-1': 'py-1 px-2'}
+  ${compact ? 'px-1' : 'py-1 px-2'}
   ${rounded ? 'rounded-full' : 'rounded'}
   ${block ? 'block w-full ' : ''}`
 
@@ -46,7 +78,10 @@ export default function Button(props: IButton) {
 
 interface IButton {
   children: React.ReactNode
-  variant?: 'filled' | 'outline' | 'light'
+  variant?: ButtonVariants
+  color?: string
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  fullWidth?: boolean
   uppercase?: boolean
   compact?: boolean
   rounded?: boolean
