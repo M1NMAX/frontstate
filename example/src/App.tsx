@@ -8,6 +8,7 @@ import {
   Slider,
   Textarea,
   TextInput,
+  Toaster,
   Tooltip
 } from 'frontstate'
 import 'frontstate/dist/index.css'
@@ -17,25 +18,12 @@ const App = () => {
   const [num, setNum] = useState('10')
   console.log(value)
   return (
-    <div className='flex flex-col items-center justify-center space-y-2 p-2  w-screen h-screen overflow-hidden'>
-      <Alert
-        variant='light'
-        color='green'
-        title='heje'
-        rounded='xl'
-        withCloseBtn
-      >
-        hgaogo
-      </Alert>
-
+    <div className='flex flex-col items-center justify-center space-y-2  '>
+      <Toaster title='deful'>
+        Hell bfakbfafbkabfakjfbk <br /> faihfidi
+      </Toaster>
       <Loader />
-      <Alert
-        icon=' &times;'
-        variant='light'
-        color='pink'
-        title='heje'
-        rounded='xl'
-      >
+      <Alert icon=' &times;' variant='light' color='pink' title='heje'>
         hgaogo
       </Alert>
       <Button
